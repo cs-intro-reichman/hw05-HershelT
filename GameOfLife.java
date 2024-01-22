@@ -12,8 +12,8 @@ public class GameOfLife {
 		String fileName = args[0];
 		//// Uncomment the test that you want to execute, and re-compile.
 		//// (Run one test at a time).
-		// test1(fileName);
-		// test2(fileName);
+		//test1(fileName);
+		//test2(fileName);
 		test3(fileName, 9);
 	//	play(fileName);
 	}
@@ -28,7 +28,7 @@ public class GameOfLife {
 	// the count and cellValue functions.
 	private static void test2(String fileName) {
 		int[][] board = read(fileName);
-		int row = 2;
+		int row = 3;
 		int col = 2;
 		System.out.println("Checking row: " + row + " Col: " + col);
 		System.out.println("Cell is : " + board[row][col]);
@@ -136,8 +136,8 @@ public class GameOfLife {
 	public static int count(int[][] board, int i, int j) {
 		//// Replace the following statement with your code.
 		int living = 0;
-		int[] rowRotations = {-1,-1,-1,0,0,1,1,1}; //each different scenario on each row
-		int[] colRotations = {-1,0,1,-1,1,-1,0,1};//each element that is possible on each row
+		int[] rowRotations = {0,0,-1,-1,-1,1,1,1}; //each different scenario on each row
+		int[] colRotations = {-1,1,-1,0,1,-1,0,1};//each element that is possible on each row
 
 		for (int a = 0; a < 8; a++){
 			int rowRotation = i+rowRotations[a];
