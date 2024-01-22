@@ -14,7 +14,7 @@ public class GameOfLife {
 		//// (Run one test at a time).
 		// test1(fileName);
 		// test2(fileName);
-		//test3(fileName, 3);
+		test3(fileName, 9);
 	//	play(fileName);
 	}
 	
@@ -97,7 +97,7 @@ public class GameOfLife {
 		int newBoard[][] = new int[board.length][board[0].length];
 		for (int i=1; i < board.length-1;i++){
 			for (int j=1; j<board[0].length-1;j++) {
-				if (cellValue(board, i, j) != 0) {
+				if (cellValue(board, i, j) == 1) {
 					newBoard[i][j] = 1;
 					// Add code here to update the newBoard
 				}
@@ -140,8 +140,12 @@ public class GameOfLife {
 		int[] colRotations = {-1,0,1,-1,1,-1,0,1};//each element that is possible on each row
 
 		for (int a = 0; a < 8; a++){
-			if (board[i+rowRotations[a]][j+colRotations[a]] == 1){
-				living++;
+			int rowRotation = i+rowRotations[a];
+			int colRotation = j + colRotations[a];
+			if (rowRotation >= 0 && rowRotation<board.length && colRotation>=0 && colRotation<board[0].length){
+				if (board[rowRotation][colRotation] == 1){
+					living++;
+				}
 			}
 		}
 		return living;
