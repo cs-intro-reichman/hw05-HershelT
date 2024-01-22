@@ -7,6 +7,7 @@
 
 public class GameOfLife {
 
+
 	public static void main(String[] args) {
 		String fileName = args[0];
 		//// Uncomment the test that you want to execute, and re-compile.
@@ -29,6 +30,7 @@ public class GameOfLife {
 		int[][] board = read(fileName);
 		//// Write here code that tests that the count and cellValue functions
 		//// are working properly, and returning the correct values.
+
 	}
 		
 	// Reads the data file, plays the game for Ngen generations, 
