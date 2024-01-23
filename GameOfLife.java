@@ -80,7 +80,7 @@ public class GameOfLife {
 				continue;
 			}
 			for (int j = 0; j < line.length(); j++) {
-				if (line.charAt(j) == 'x' && j != 0 && j != cols - 1) {
+				if (line.charAt(j) == 'x' && j != 0 && j != cols-1) {
 					board[i][j] = 1;
 				}
 			}
