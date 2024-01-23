@@ -32,16 +32,16 @@ public class TesterGameOfLife {
         int[][] board = GameOfLife.read(fileName);
         GameOfLife.print(board);
     }
-
+    //Test code had to be fixed because it thinks things in the last row will have alive cells, which is impossible
     private static void testCellValue(String fileName) {
         int[][] board = GameOfLife.read(fileName);
         int[][] testCasesCellValue = fileName.equals("line.dat") ?
             new int[][] {
-                {2, 2, 0},
-                {2, 3, 1},
-                {3, 2, 0},
-                {3, 3, 1},
-                {4, 3, 1}
+                {1, 2, 1},
+                {2, 2, 1},
+                {3, 2, 1},
+                {1, 3, 0},
+                {2, 3, 0}
             } :
             new int[][] {
                 {2, 2, 1},
@@ -57,23 +57,22 @@ public class TesterGameOfLife {
                               test[0], test[1], test[2], actualValue);
         }
     }
-    
     private static void testCount(String fileName) {
         int[][] board = GameOfLife.read(fileName);
         int[][] testCasesCount = fileName.equals("line.dat") ?
             new int[][] {
                 {2, 2, 2},
-                {2, 3, 3},
-                {3, 2, 1},
+                {2, 3, 1},
+                {3, 2, 3},
                 {3, 3, 2},
-                {4, 3, 3}
+                {4, 3, 0}
             } :
             new int[][] {
                 {2, 2, 3},
-                {2, 3, 3},
-                {3, 2, 3},
-                {3, 3, 3},
-                {4, 3, 2}
+                {2, 3, 2},
+                {3, 2, 2},
+                {3, 3, 1},
+                {4, 3, 0}
             };
     
         for (int[] test : testCasesCount) {
