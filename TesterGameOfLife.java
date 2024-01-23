@@ -69,10 +69,10 @@ public class TesterGameOfLife {
             } :
             new int[][] {
                 {2, 2, 3},
-                {2, 3, 3},
-                {3, 2, 3},
-                {3, 3, 3},
-                {4, 3, 2}
+                {2, 3, 2},
+                {3, 2, 2},
+                {3, 3, 1},
+                {4, 3, 0}
             };
     
         for (int[] test : testCasesCount) {
