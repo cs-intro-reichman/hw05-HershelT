@@ -14,8 +14,8 @@ public class GameOfLife {
 		//// (Run one test at a time).
 		//test1(fileName);
 		//test2(fileName);
-		test3(fileName, 9);
-	//	play(fileName);
+		//test3(fileName, 9);
+		play(fileName);
 	}
 	
 	// Reads the data file and prints the initial board.
@@ -125,7 +125,9 @@ public class GameOfLife {
 		else if (numAtPos == 0 && checkAlive == 3) {
 			return 1;
 		}
-		return 0;
+		else {
+			return 0;
+		}
 		
 	}
 	
@@ -140,7 +142,7 @@ public class GameOfLife {
 		int[] colRotations = {-1,1,-1,0,1,-1,0,1};//each element that is possible on each row
 
 		for (int a = 0; a < 8; a++){
-			int rowRotation = i+rowRotations[a];
+			int rowRotation = i + rowRotations[a];
 			int colRotation = j + colRotations[a];
 			if (rowRotation >= 0 && rowRotation<board.length && colRotation>=0 && colRotation<board[0].length){
 				if (board[rowRotation][colRotation] == 1){
